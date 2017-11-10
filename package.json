@@ -1,0 +1,17 @@
+{
+  "name": "hmr",
+  "version": "1.0.0",
+  "description": "```shell node ../../bin/webpack-dev-server.js --open --hot ```",
+  "main": "hmr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --inline --hot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}
