@@ -1,5 +1,5 @@
 'use strict';
 
 require('./hmr');
-require('./index');
-
+require('./app.bundle.css'); 
+require('./index.js');

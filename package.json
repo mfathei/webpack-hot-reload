@@ -5,7 +5,8 @@
   "main": "hmr.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --inline --hot"
+    "start": "webpack-dev-server --inline --hot --color",
+    "build:prod": "webpack -p"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,12 @@
     "webpack-dev-server": "^2.9.4"
   },
   "devDependencies": {
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-harddisk-plugin": "^0.1.0",
     "html-webpack-plugin": "^2.30.1",
     "raw-loader": "^0.5.1",
-    "reload-html-webpack-plugin": "^0.1.2"
+    "reload-html-webpack-plugin": "^0.1.2",
+    "style-loader": "^0.19.0"
   }
 }
