@@ -1,9 +1,9 @@
 'use strict';
 
 const webpack = require('webpack');
+const path = require('path');
 const ReloadHtmlWebpackPlugin = require('reload-html-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('app.bundle.css');
 
@@ -30,7 +30,17 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          use: extractCSS.extract({use: {loader: 'css-loader', options:{minimize: true}}})
+          use: ['css-hot-loader'].concat(extractCSS.extract({use: {loader: 'css-loader', options:{minimize: true}}}))
+        },
+        {
+            test: /\.(png|jpe?g|gif|svgz?|woff2?|eot)$/i,
+            include: path.resolve(__dirname, 'img'),
+            use: {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]'
+                }
+            }
         }
     ]
   }
